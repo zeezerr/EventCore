@@ -1,0 +1,218 @@
+# Per-event settings. Each event reads its own section: events.<id>.<key>
+events:
+  supply_drop:
+    interval-seconds: 120
+    radius: 300
+    announce: true
+    loot:
+      - GOLDEN_APPLE:3
+      - DIAMOND:4
+      - IRON_INGOT:16
+      - ARROW:32
+      - COOKED_BEEF:16
+      - ENDER_PEARL:2
+  tnt_rain:
+    interval-ticks: 20
+    tnt-per-player: 2
+    height: 18
+    spread: 10
+    fuse-ticks: 60
+  red_light_green_light:
+    green-min-seconds: 4
+    green-max-seconds: 9
+    red-seconds: 4
+    damage: 4.0
+  rising_lava:
+    start-y: -55
+    rise-seconds: 15
+    radius: 40
+  falling_blocks:
+    interval-ticks: 30
+    per-player: 2
+    height: 20
+    spread: 8
+    blocks: [ANVIL, SAND, GRAVEL, STONE]
+  mobs_apocalypse:
+    interval-seconds: 10
+    per-player: 3
+    mobs: [ZOMBIE, SKELETON, SPIDER, CREEPER, WITCH]
+  giant_mobs:
+    scale: 3.0
+  tiny_mobs:
+    scale: 0.4
+  exploding_mobs:
+    power: 2.0
+    break-blocks: false
+  player_size:
+    min-scale: 0.5
+    max-scale: 2.0
+    reroll-seconds: 60
+  player_speed:
+    multiplier: 2.0
+  player_swap:
+    interval-seconds: 60
+  inventory_swap:
+    interval-seconds: 90
+  inventory_shuffle:
+    interval-seconds: 90
+  chat_question:
+    interval-seconds: 120
+    rewards:
+      - DIAMOND:2
+      - GOLDEN_APPLE:2
+      - ENDER_PEARL:3
+  last_man_standing: {}
+  ultra_hardcore: {}
+  tnt_tag:
+    time-seconds: 30
+  dimension_stop: {}
+  banned_items:
+    banned: [ENDER_PEARL, TNT, END_CRYSTAL, LAVA_BUCKET]
+  recipe_disabler:
+    disabled: [TNT, END_CRYSTAL, RESPAWN_ANCHOR, GOLDEN_APPLE]
+  everyone_anonymous: {}
+  mace_roulette:
+    interval-seconds: 90
+    hold-seconds: 30
+  juggernaut:
+    health: 60
+  heart_customizer:
+    hearts: 5
+  freeze_player:
+    interval-seconds: 45
+    freeze-seconds: 8
+
+  # ---------------- Newer events ----------------
+  # Events with a location use the world spawn unless you stand somewhere and run:  /event setloc <event>
+  koth:
+    radius: 6
+    points-to-win: 60
+    reward: [DIAMOND:5, GOLDEN_APPLE:3]
+  freeze_tag:
+    time-seconds: 300
+    players-per-tagger: 4
+  find_the_color:
+    size: 24
+    height: 25
+    start-seconds: 6
+    reward: [DIAMOND:5]
+  bounty:
+    interval-seconds: 120
+    reward: [DIAMOND:3, GOLDEN_APPLE:2]
+  hide_and_seek:
+    hide-seconds: 30
+    seek-seconds: 300
+    players-per-seeker: 5
+  altar:
+    offering: DIAMOND
+    effect-seconds: 120
+  scavenger_hunt:
+    count: 5
+    reward: [DIAMOND:5]
+    pool: [COAL, IRON_INGOT, GOLD_INGOT, REDSTONE, LAPIS_LAZULI, DIAMOND, EMERALD, WHEAT, BREAD, COOKED_BEEF, BONE, STRING, GUNPOWDER, SLIME_BALL, ENDER_PEARL, BLAZE_ROD, APPLE, SUGAR_CANE, COBWEB, FEATHER]
+  end_event:
+    reward: [NETHERITE_INGOT:2, ELYTRA:1]
+  assassin_event:
+    kill-reward: [GOLDEN_APPLE:2, DIAMOND:2]
+  custom_recipes:
+    recipes:
+      - key: super_apple
+        result: ENCHANTED_GOLDEN_APPLE:1
+        shape: ["GGG", "GAG", "GGG"]
+        ingredients:
+          G: GOLD_BLOCK
+          A: APPLE
+      - key: lightning_pick
+        result: DIAMOND_PICKAXE:1
+        shape: ["DDD", " S ", " S "]
+        ingredients:
+          D: DIAMOND_BLOCK
+          S: STICK
+  kill_system:
+    kill-reward: [GOLDEN_APPLE:1]
+    heal-on-kill: 4.0
+  kits:
+    clear-first: false
+    give-on-respawn: true
+    items: [IRON_SWORD, IRON_HELMET, IRON_CHESTPLATE, IRON_LEGGINGS, IRON_BOOTS, COOKED_BEEF:16, BOW, ARROW:32]
+  announcements:
+    interval-seconds: 300
+    prefix: "<aqua>[Announcement]</aqua> "
+    messages:
+      - "<yellow>Welcome to the server!</yellow>"
+      - "<green>Events run every Friday night.</green>"
+      - "<gray>Join our Discord for more info.</gray>"
+  simon_says:
+    round-seconds: 8
+    damage: 4.0
+  hostile_animals:
+    interval-seconds: 15
+    per-player: 2
+    max-alive: 40
+    animals: [WOLF, POLAR_BEAR, BEE]
+  dragon_egg_perks:
+    give-to-random: true
+    broadcast-seconds: 60
+  pillars_of_fortune:
+    item-seconds: 10
+    height: 25
+  mini_boss_gravekeeper:
+    item-model: ""
+    model-scale: 2.0
+    model-transform: FIXED
+    interval-seconds: 300
+    first-spawn-seconds: 10
+    ability-seconds: 6
+    health: 200
+    xp: 500
+    rewards: [NETHERITE_SCRAP:2, DIAMOND:8, WITHER_SKELETON_SKULL:1]
+  mini_boss_bone_sniper:
+    item-model: ""
+    model-scale: 2.0
+    model-transform: FIXED
+    interval-seconds: 300
+    first-spawn-seconds: 10
+    ability-seconds: 5
+    health: 120
+    xp: 500
+    rewards: [BOW:1, ARROW:64, DIAMOND:6]
+  mini_boss_brood_mother:
+    item-model: ""
+    model-scale: 2.0
+    model-transform: FIXED
+    interval-seconds: 300
+    first-spawn-seconds: 10
+    ability-seconds: 7
+    health: 200
+    xp: 500
+    rewards: [SPIDER_EYE:16, FERMENTED_SPIDER_EYE:8, DIAMOND:6]
+  mini_boss_evoker:
+    item-model: ""
+    model-scale: 2.0
+    model-transform: FIXED
+    interval-seconds: 300
+    first-spawn-seconds: 10
+    ability-seconds: 7
+    health: 150
+    xp: 500
+    rewards: [TOTEM_OF_UNDYING:1, EMERALD:16, DIAMOND:6]
+  mini_boss_inferno_blaze:
+    item-model: ""
+    model-scale: 2.0
+    model-transform: FIXED
+    interval-seconds: 300
+    first-spawn-seconds: 10
+    ability-seconds: 6
+    health: 150
+    xp: 500
+    rewards: [BLAZE_ROD:16, FIRE_CHARGE:16, DIAMOND:6]
+  mini_boss_frost_stray:
+    item-model: ""
+    model-scale: 2.0
+    model-transform: FIXED
+    interval-seconds: 300
+    first-spawn-seconds: 10
+    ability-seconds: 7
+    health: 150
+    xp: 500
+    rewards: [BLUE_ICE:16, ARROW:64, DIAMOND:6]

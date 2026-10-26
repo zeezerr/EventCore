@@ -1,0 +1,14 @@
+name: EventCore
+version: '${project.version}'
+main: com.example.eventcore.EventCore
+api-version: '1.21'
+description: Run server events from one plugin
+commands:
+  event:
+    description: Manage server events
+    usage: /event <gui|list|start|stop|stopall> [event]
+    permission: eventcore.admin
+permissions:
+  eventcore.admin:
+    description: Allows managing events
+    default: op
